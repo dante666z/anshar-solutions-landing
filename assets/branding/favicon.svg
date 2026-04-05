@@ -1,0 +1,11 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ansharFavGradient" x1="12" y1="10" x2="52" y2="54" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7BE7FF"/>
+      <stop offset="1" stop-color="#27D3FF"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="20" fill="#06101D"/>
+  <path d="M32 10 12 54h9l4.2-9h13.6l4.2 9h9L32 10Zm0 13.4 4.7 10.4H27.3L32 23.4Z" fill="url(#ansharFavGradient)"/>
+  <circle cx="32" cy="34" r="4.4" fill="#F5F9FF"/>
+</svg>
