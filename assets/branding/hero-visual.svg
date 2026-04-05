@@ -1,0 +1,42 @@
+<svg width="720" height="760" viewBox="0 0 720 760" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="heroBg" x1="70" y1="40" x2="620" y2="700" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#122447"/>
+      <stop offset="1" stop-color="#081120"/>
+    </linearGradient>
+    <linearGradient id="heroGlow" x1="160" y1="140" x2="520" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7BE7FF" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#27D3FF" stop-opacity="0.08"/>
+    </linearGradient>
+    <linearGradient id="screenStroke" x1="180" y1="170" x2="490" y2="470" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7BE7FF"/>
+      <stop offset="1" stop-color="#1C4B8C"/>
+    </linearGradient>
+  </defs>
+  <rect x="24" y="24" width="672" height="712" rx="40" fill="url(#heroBg)" stroke="#1E395F"/>
+  <circle cx="492" cy="196" r="150" fill="url(#heroGlow)"/>
+  <path d="M80 132H638" stroke="#173258" stroke-width="2"/>
+  <path d="M80 604H638" stroke="#173258" stroke-width="2"/>
+  <rect x="132" y="160" width="456" height="280" rx="28" fill="#0B1730" stroke="url(#screenStroke)" stroke-width="2"/>
+  <rect x="160" y="188" width="112" height="12" rx="6" fill="#20456E"/>
+  <rect x="160" y="216" width="186" height="12" rx="6" fill="#163A70"/>
+  <rect x="160" y="260" width="220" height="18" rx="9" fill="#F5F9FF" fill-opacity="0.08"/>
+  <rect x="160" y="292" width="292" height="18" rx="9" fill="#F5F9FF" fill-opacity="0.08"/>
+  <rect x="160" y="324" width="250" height="18" rx="9" fill="#F5F9FF" fill-opacity="0.08"/>
+  <rect x="436" y="252" width="112" height="112" rx="24" fill="#122447" stroke="#22538B"/>
+  <path d="M492 282 470 330H482L486.5 320H497.5L502 330H514L492 282Zm0 15.4 4.6 10.2H487.4L492 297.4Z" fill="#27D3FF"/>
+  <circle cx="492" cy="309" r="4.2" fill="#F5F9FF"/>
+  <rect x="102" y="484" width="212" height="92" rx="22" fill="#0E1E3B" stroke="#1E395F"/>
+  <rect x="340" y="470" width="278" height="116" rx="24" fill="#102041" stroke="#22538B"/>
+  <rect x="126" y="508" width="46" height="46" rx="14" fill="#122447"/>
+  <path d="M149 518 139 540H143.5L145.8 535H152.2L154.5 540H159L149 518Zm0 7.1 2.1 4.7H146.9L149 525.1Z" fill="#27D3FF"/>
+  <circle cx="149" cy="530" r="2.2" fill="#F5F9FF"/>
+  <text x="186" y="521" fill="#F5F9FF" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">Anshar Solutions</text>
+  <text x="186" y="548" fill="#AFC0DA" font-family="Inter, Arial, sans-serif" font-size="14">Web, software y SEO estratégico</text>
+  <text x="366" y="506" fill="#7BE7FF" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700">Posicionamiento. Estructura. Resultados.</text>
+  <rect x="366" y="524" width="168" height="14" rx="7" fill="#F5F9FF" fill-opacity="0.08"/>
+  <rect x="366" y="550" width="212" height="14" rx="7" fill="#F5F9FF" fill-opacity="0.08"/>
+  <circle cx="626" cy="112" r="8" fill="#27D3FF" fill-opacity="0.7"/>
+  <circle cx="604" cy="632" r="11" fill="#7BE7FF" fill-opacity="0.4"/>
+  <circle cx="116" cy="648" r="6" fill="#27D3FF" fill-opacity="0.4"/>
+</svg>

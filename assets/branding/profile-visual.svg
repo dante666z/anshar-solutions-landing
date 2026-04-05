@@ -1,0 +1,25 @@
+<svg width="640" height="720" viewBox="0 0 640 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="profileBg" x1="80" y1="40" x2="520" y2="650" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#122447"/>
+      <stop offset="1" stop-color="#091425"/>
+    </linearGradient>
+    <linearGradient id="profileGlow" x1="190" y1="160" x2="430" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7BE7FF" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#27D3FF" stop-opacity="0.08"/>
+    </linearGradient>
+  </defs>
+  <rect x="28" y="24" width="584" height="672" rx="40" fill="url(#profileBg)" stroke="#1E395F"/>
+  <circle cx="324" cy="270" r="170" fill="url(#profileGlow)"/>
+  <circle cx="320" cy="250" r="112" fill="#0B1730" stroke="#22538B" stroke-width="2"/>
+  <circle cx="320" cy="230" r="44" fill="#163A70"/>
+  <path d="M230 412c18-54 56-84 90-84s72 30 90 84" stroke="#27D3FF" stroke-width="18" stroke-linecap="round"/>
+  <rect x="114" y="484" width="412" height="126" rx="26" fill="#0E1E3B" stroke="#22538B"/>
+  <text x="164" y="530" fill="#F5F9FF" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="800">Anshar Solutions</text>
+  <text x="164" y="567" fill="#AFC0DA" font-family="Inter, Arial, sans-serif" font-size="16">Firma digital especializada en web, software y SEO.</text>
+  <rect x="164" y="584" width="180" height="10" rx="5" fill="#F5F9FF" fill-opacity="0.08"/>
+  <rect x="360" y="584" width="102" height="10" rx="5" fill="#F5F9FF" fill-opacity="0.08"/>
+  <circle cx="132" cy="114" r="16" fill="#27D3FF" fill-opacity="0.45"/>
+  <circle cx="516" cy="154" r="10" fill="#7BE7FF" fill-opacity="0.4"/>
+  <circle cx="532" cy="638" r="12" fill="#27D3FF" fill-opacity="0.35"/>
+</svg>
