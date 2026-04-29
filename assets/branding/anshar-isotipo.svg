@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" role="img" aria-labelledby="ansharIsotipoTitle">
+  <title id="ansharIsotipoTitle">Isotipo de ANSHAR SOLUTIONS</title>
+  <defs>
+    <linearGradient id="ansharIconRing" x1="42" y1="18" x2="132" y2="142" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#60BEFF"/>
+      <stop offset="1" stop-color="#1F5DAE"/>
+    </linearGradient>
+    <linearGradient id="ansharIconArc" x1="48" y1="118" x2="129" y2="149" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#27D4FF"/>
+      <stop offset="1" stop-color="#1DA1F2"/>
+    </linearGradient>
+  </defs>
+  <circle cx="90" cy="62" r="46" fill="none" stroke="url(#ansharIconRing)" stroke-width="20"/>
+  <circle cx="90" cy="62" r="18" fill="#18439B"/>
+  <path d="M56 138c8.8-29 21.5-41 34-41s25.2 12 34 41" fill="none" stroke="url(#ansharIconArc)" stroke-linecap="round" stroke-width="14"/>
+</svg>

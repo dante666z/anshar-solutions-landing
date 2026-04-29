@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="ansharFaviconTitle">
+  <title id="ansharFaviconTitle">ANSHAR SOLUTIONS favicon</title>
+  <defs>
+    <linearGradient id="ansharFavRing" x1="14" y1="8" x2="47" y2="55" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#60BEFF"/>
+      <stop offset="1" stop-color="#1F5DAE"/>
+    </linearGradient>
+    <linearGradient id="ansharFavArc" x1="16" y1="43" x2="47" y2="57" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#27D4FF"/>
+      <stop offset="1" stop-color="#1DA1F2"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="18" fill="#081629"/>
+  <circle cx="32" cy="23" r="16" fill="none" stroke="url(#ansharFavRing)" stroke-width="7"/>
+  <circle cx="32" cy="23" r="6.2" fill="#18439B"/>
+  <path d="M20 50c3.3-10.8 7.8-15.2 12-15.2s8.7 4.4 12 15.2" fill="none" stroke="url(#ansharFavArc)" stroke-linecap="round" stroke-width="6"/>
+</svg>

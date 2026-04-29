@@ -1,138 +1,157 @@
 document.addEventListener("DOMContentLoaded", () => {
+    const body = document.body;
     const navbar = document.querySelector(".custom-navbar");
-    const navLinks = document.querySelectorAll(".navbar .nav-link");
     const navbarCollapse = document.querySelector(".navbar-collapse");
-    const quoteForm = document.getElementById("quoteForm");
-    const feedbackBox = document.getElementById("formFeedback");
+    const navLinks = Array.from(document.querySelectorAll(".navbar .nav-link"));
+    const revealItems = document.querySelectorAll(".reveal");
+    const filterButtons = document.querySelectorAll("[data-filter]");
+    const filterCards = document.querySelectorAll("[data-project-category]");
+    const samePageAnchors = navLinks.filter((link) => {
+        const href = link.getAttribute("href") || "";
+        return href.startsWith("#");
+    });
 
-    // Inicializa animaciones on-scroll.
-    if (typeof AOS !== "undefined") {
-        AOS.init({
-            duration: 800,
-            easing: "ease-out-cubic",
-            once: true,
-            offset: 80
+    const setCurrentYear = () => {
+        document.querySelectorAll("[data-year]").forEach((node) => {
+            node.textContent = new Date().getFullYear();
         });
-    }
+    };
 
-    // Cambia el estilo del navbar al hacer scroll.
     const toggleNavbarState = () => {
         if (!navbar) {
             return;
         }
 
-        navbar.classList.toggle("scrolled", window.scrollY > 30);
+        navbar.classList.toggle("scrolled", window.scrollY > 18);
     };
 
-    toggleNavbarState();
-    window.addEventListener("scroll", toggleNavbarState);
+    const closeMobileMenu = () => {
+        if (navbarCollapse && navbarCollapse.classList.contains("show")) {
+            const collapseInstance = bootstrap.Collapse.getOrCreateInstance(navbarCollapse);
+            collapseInstance.hide();
+        }
+    };
 
-    const setActiveNavLink = (targetId) => {
-        navLinks.forEach((navLink) => {
-            const isCurrent = navLink.getAttribute("href") === targetId;
-            navLink.classList.toggle("active", isCurrent);
-            navLink.setAttribute("aria-current", isCurrent ? "page" : "false");
+    const setActiveLink = (targetHref) => {
+        navLinks.forEach((link) => {
+            const isActive = link.getAttribute("href") === targetHref;
+            link.classList.toggle("active", isActive);
+            link.setAttribute("aria-current", isActive ? "page" : "false");
         });
     };
 
-    // Refuerza el scroll suave con offset para el navbar fijo.
-    navLinks.forEach((link) => {
-        link.addEventListener("click", (event) => {
-            const targetId = link.getAttribute("href");
+    const initSmoothScroll = () => {
+        samePageAnchors.forEach((link) => {
+            link.addEventListener("click", (event) => {
+                const targetHref = link.getAttribute("href");
+                const target = targetHref ? document.querySelector(targetHref) : null;
 
-            if (!targetId || !targetId.startsWith("#")) {
-                return;
-            }
+                if (!target) {
+                    return;
+                }
 
-            const targetSection = document.querySelector(targetId);
+                event.preventDefault();
+                const offset = navbar ? navbar.offsetHeight : 0;
+                const position = target.getBoundingClientRect().top + window.scrollY - offset + 2;
 
-            if (!targetSection) {
-                return;
-            }
+                window.scrollTo({
+                    top: position,
+                    behavior: "smooth"
+                });
 
-            event.preventDefault();
-            setActiveNavLink(targetId);
-
-            const navHeight = navbar ? navbar.offsetHeight : 0;
-            const targetPosition = targetSection.getBoundingClientRect().top + window.scrollY - navHeight + 2;
-
-            window.scrollTo({
-                top: targetPosition,
-                behavior: "smooth"
+                setActiveLink(targetHref);
+                closeMobileMenu();
             });
-
-            // Cierra el menú móvil después de navegar.
-            if (navbarCollapse && navbarCollapse.classList.contains("show")) {
-                const collapseInstance = bootstrap.Collapse.getOrCreateInstance(navbarCollapse);
-                collapseInstance.hide();
-            }
         });
-    });
 
-    // Mantiene solo un enlace activo según la sección visible.
-    const observedSections = Array.from(navLinks)
-        .map((link) => document.querySelector(link.getAttribute("href")))
-        .filter(Boolean);
+        navLinks
+            .filter((link) => !(link.getAttribute("href") || "").startsWith("#"))
+            .forEach((link) => {
+                link.addEventListener("click", closeMobileMenu);
+            });
+    };
 
-    if ("IntersectionObserver" in window && observedSections.length > 0) {
-        const sectionObserver = new IntersectionObserver(
+    const initSectionObserver = () => {
+        if (body.dataset.page !== "home" || !("IntersectionObserver" in window)) {
+            return;
+        }
+
+        const observedSections = samePageAnchors
+            .map((link) => document.querySelector(link.getAttribute("href")))
+            .filter(Boolean);
+
+        const observer = new IntersectionObserver(
             (entries) => {
-                const visibleEntry = entries
+                const visibleSection = entries
                     .filter((entry) => entry.isIntersecting)
                     .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
 
-                if (visibleEntry?.target?.id) {
-                    setActiveNavLink(`#${visibleEntry.target.id}`);
+                if (visibleSection?.target?.id) {
+                    setActiveLink(`#${visibleSection.target.id}`);
                 }
             },
             {
-                root: null,
                 rootMargin: "-35% 0px -45% 0px",
                 threshold: [0.2, 0.35, 0.5, 0.7]
             }
         );
 
-        observedSections.forEach((section) => sectionObserver.observe(section));
-    }
+        observedSections.forEach((section) => observer.observe(section));
+    };
 
-    // Manejo visual y validación básica del formulario del modal.
-    if (quoteForm && feedbackBox) {
-        quoteForm.addEventListener("submit", (event) => {
-            event.preventDefault();
+    const initReveal = () => {
+        if (!("IntersectionObserver" in window)) {
+            revealItems.forEach((item) => item.classList.add("is-visible"));
+            return;
+        }
 
-            const formData = new FormData(quoteForm);
-            const payload = Object.fromEntries(formData.entries());
-            const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(payload.email || "");
-            const hasEmptyFields = Object.values(payload).some((value) => String(value).trim() === "");
-
-            feedbackBox.className = "form-feedback";
-
-            if (hasEmptyFields || !isValidEmail) {
-                feedbackBox.classList.add("error");
-                feedbackBox.textContent = "Por favor completa todos los campos con información válida antes de enviar tu solicitud.";
-                return;
+        const revealObserver = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("is-visible");
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            },
+            {
+                threshold: 0.16
             }
+        );
 
-            feedbackBox.classList.add("success");
-            feedbackBox.textContent = "Solicitud enviada correctamente. En un proyecto real, aquí puedes conectar el formulario con tu correo o backend.";
-            console.log("Solicitud de cotización:", payload);
-            quoteForm.reset();
+        revealItems.forEach((item) => revealObserver.observe(item));
+    };
+
+    const initFilters = () => {
+        if (!filterButtons.length || !filterCards.length) {
+            return;
+        }
+
+        filterButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                const selectedFilter = button.dataset.filter || "all";
+
+                filterButtons.forEach((btn) => btn.classList.toggle("active", btn === button));
+
+                filterCards.forEach((card) => {
+                    const category = card.dataset.projectCategory || "";
+                    const shouldShow = selectedFilter === "all" || category.includes(selectedFilter);
+                    card.classList.toggle("hidden", !shouldShow);
+                });
+            });
         });
-    }
+    };
 
-    // Limpia el mensaje al reabrir el modal.
-    const contactModal = document.getElementById("contactModal");
+    toggleNavbarState();
+    setCurrentYear();
+    initSmoothScroll();
+    initSectionObserver();
+    initReveal();
+    initFilters();
 
-    if (contactModal && feedbackBox && quoteForm) {
-        contactModal.addEventListener("show.bs.modal", () => {
-            feedbackBox.className = "form-feedback d-none";
-            feedbackBox.textContent = "";
-        });
+    window.addEventListener("scroll", toggleNavbarState);
 
-        contactModal.addEventListener("hidden.bs.modal", () => {
-            feedbackBox.className = "form-feedback d-none";
-            feedbackBox.textContent = "";
-            quoteForm.reset();
-        });
+    if (body.dataset.page === "projects") {
+        setActiveLink("proyectos.html");
     }
 });

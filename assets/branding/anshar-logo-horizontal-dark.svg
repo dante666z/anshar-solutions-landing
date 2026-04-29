@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 180" role="img" aria-labelledby="ansharLogoTitleDark">
+  <title id="ansharLogoTitleDark">ANSHAR SOLUTIONS</title>
+  <defs>
+    <linearGradient id="ansharRingDark" x1="42" y1="18" x2="132" y2="142" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#60BEFF"/>
+      <stop offset="1" stop-color="#1F5DAE"/>
+    </linearGradient>
+    <linearGradient id="ansharArcDark" x1="48" y1="118" x2="129" y2="149" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#27D4FF"/>
+      <stop offset="1" stop-color="#1DA1F2"/>
+    </linearGradient>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <g transform="translate(0 8)">
+      <circle cx="90" cy="62" r="46" stroke="url(#ansharRingDark)" stroke-width="20"/>
+      <circle cx="90" cy="62" r="18" fill="#18439B"/>
+      <path d="M56 138c8.8-29 21.5-41 34-41s25.2 12 34 41" stroke="url(#ansharArcDark)" stroke-linecap="round" stroke-width="14"/>
+    </g>
+    <g transform="translate(194 26)">
+      <text x="0" y="56" fill="#FFFFFF" font-family="Inter, Poppins, Arial, sans-serif" font-size="62" font-weight="700" letter-spacing="0.28em">ANSHAR</text>
+      <line x1="2" y1="90" x2="72" y2="90" stroke="#22C7F2" stroke-width="4" stroke-linecap="round"/>
+      <line x1="316" y1="90" x2="386" y2="90" stroke="#22C7F2" stroke-width="4" stroke-linecap="round"/>
+      <text x="96" y="102" fill="#22C7F2" font-family="Inter, Poppins, Arial, sans-serif" font-size="34" font-weight="600" letter-spacing="0.42em">SOLUTIONS</text>
+      <text x="2" y="144" fill="#A9B3C7" font-family="Inter, Poppins, Arial, sans-serif" font-size="24" font-weight="500" letter-spacing="0.17em">DESARROLLO DE SOFTWARE A MEDIDA</text>
+    </g>
+  </g>
+</svg>

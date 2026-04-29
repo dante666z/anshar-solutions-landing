@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 120" role="img" aria-labelledby="ansharCompactLightTitle">
+  <title id="ansharCompactLightTitle">ANSHAR SOLUTIONS</title>
+  <defs>
+    <linearGradient id="ansharCompactRingLight" x1="24" y1="10" x2="104" y2="110" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#60BEFF"/>
+      <stop offset="1" stop-color="#1F5DAE"/>
+    </linearGradient>
+    <linearGradient id="ansharCompactArcLight" x1="28" y1="80" x2="104" y2="108" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#27D4FF"/>
+      <stop offset="1" stop-color="#1DA1F2"/>
+    </linearGradient>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <g transform="translate(0 2)">
+      <circle cx="64" cy="42" r="34" stroke="url(#ansharCompactRingLight)" stroke-width="16"/>
+      <circle cx="64" cy="42" r="13" fill="#18439B"/>
+      <path d="M40 100c6.7-22 15.8-31 24-31s17.3 9 24 31" stroke="url(#ansharCompactArcLight)" stroke-linecap="round" stroke-width="12"/>
+    </g>
+    <g transform="translate(144 20)">
+      <text x="0" y="38" fill="#061426" font-family="Inter, Poppins, Arial, sans-serif" font-size="48" font-weight="700" letter-spacing="0.22em">ANSHAR</text>
+      <text x="60" y="79" fill="#1DA1F2" font-family="Inter, Poppins, Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="0.34em">SOLUTIONS</text>
+    </g>
+  </g>
+</svg>

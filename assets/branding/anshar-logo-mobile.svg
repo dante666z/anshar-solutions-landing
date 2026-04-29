@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 96" role="img" aria-labelledby="ansharMobileLogoTitle">
+  <title id="ansharMobileLogoTitle">ANSHAR SOLUTIONS</title>
+  <defs>
+    <linearGradient id="ansharMobileRing" x1="18" y1="12" x2="66" y2="76" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#60BEFF"/>
+      <stop offset="1" stop-color="#1F5DAE"/>
+    </linearGradient>
+    <linearGradient id="ansharMobileArc" x1="20" y1="58" x2="66" y2="80" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#27D4FF"/>
+      <stop offset="1" stop-color="#1DA1F2"/>
+    </linearGradient>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <g transform="translate(4 6)">
+      <circle cx="38" cy="30" r="24" stroke="url(#ansharMobileRing)" stroke-width="10"/>
+      <circle cx="38" cy="30" r="9" fill="#18439B"/>
+      <path d="M20 70c4.8-16 11.2-22.5 18-22.5S51.2 54 56 70" stroke="url(#ansharMobileArc)" stroke-linecap="round" stroke-width="8"/>
+    </g>
+    <text x="88" y="44" fill="#FFFFFF" font-family="Inter, Poppins, Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="0.14em">ANSHAR</text>
+    <text x="88" y="72" fill="#22C7F2" font-family="Inter, Poppins, Arial, sans-serif" font-size="16" font-weight="600" letter-spacing="0.3em">SOLUTIONS</text>
+  </g>
+</svg>
