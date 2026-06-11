@@ -502,7 +502,25 @@ img {
     box-shadow: var(--shadow-card);
 }
 
-.client-logo-wrap img {
+.client-logo-link {
+    display: block;
+    width: min(100%, 280px);
+    border-radius: 12px;
+    transition: transform var(--transition), opacity var(--transition);
+}
+
+.client-logo-link:hover {
+    transform: scale(1.03);
+    opacity: 0.9;
+}
+
+.client-logo-link:focus-visible {
+    outline: 3px solid var(--color-cyan);
+    outline-offset: 6px;
+}
+
+.client-logo-link img {
+    display: block;
     width: min(100%, 280px);
     height: auto;
 }
