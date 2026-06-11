@@ -597,31 +597,6 @@ img {
     color: rgba(255, 255, 255, 0.72);
 }
 
-/* Stack */
-.stack-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-}
-
-.stack-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.7rem;
-    padding: 0.95rem 1.25rem;
-    border-radius: 999px;
-    border: 1px solid rgba(13, 37, 73, 0.1);
-    background: linear-gradient(180deg, #ffffff, #f9fbff);
-    color: var(--color-navy);
-    box-shadow: var(--shadow-card);
-    font-weight: 600;
-}
-
-.stack-pill i {
-    color: var(--color-blue);
-}
-
 /* CTA */
 .section-cta {
     padding-top: 5rem;
